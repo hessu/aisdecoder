@@ -80,7 +80,15 @@ int initSoundDecoder(const Sound_Channels _channels, const Sound_Driver _driver,
     case DRIVER_FILE:
         strncpy(soundFile, file, MAX_FILENAME_SIZE);
         soundFile[MAX_FILENAME_SIZE]=0;
-        fp = fopen(soundFile, "rb");
+        if(soundFile[0]=='-'){
+			fp=stdin;
+#ifdef WIN32
+		    setmode(fileno(stdin), O_BINARY); // Binary mode
+#endif
+        }
+	    else{
+            fp = fopen(soundFile, "rb");
+	    }
         if (fp) {
             buffer_l = 1024;
             int extra = buffer_l % 5;
