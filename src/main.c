@@ -62,7 +62,7 @@
 "-p\tDestination UDP port\n"\
 "-a\tAudio driver [" HELP_AUDIO_DRIVERS "]\n"  HELP_AUDIO_DEVICE\
 "-c\tSound channels [stereo,mono,left,right] (default stereo)\n"\
-"-f\tFull path to 48kHz raw audio file. Use \"-\" for stdin\n"\
+"-f\tFull path to 48kHz raw audio file. Use \"-\" for stdin.\n"\
 "-l\tLog sound levels to console (stderr)\n"\
 "-d\tLog NMEA sentences to console (stderr)\n"\
 "-H\tDisplay this help\n"
